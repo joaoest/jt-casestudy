@@ -34,7 +34,7 @@ export default function IndexPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <p>Hello you're logged in.</p>
+      <p>Welcome, you're logged in.</p>
     </div>
   );
 }
