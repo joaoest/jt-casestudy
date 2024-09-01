@@ -33,8 +33,12 @@ export default function IndexPage() {
   }, []);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <p>Welcome, you're logged in.</p>
+    <div className="flex min-h-screen items-center justify-center bg-gray-100 p-8">
+      <div className="text-center">
+        <p className="text-gray-800 text-2xl font-semibold mb-4">
+          Welcome, you're logged in.
+        </p>
+      </div>
     </div>
   );
 }

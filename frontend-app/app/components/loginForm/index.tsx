@@ -30,9 +30,8 @@ function createCookieSession(access_token: string) {
   document.cookie = `session=${access_token}; expires=${expires};`;
 }
 
-// Function to fetch all users on PB
+// Function to fetch all users on Pocketbase
 async function fetchUser(pb: any, username: string) {
-  // Get the all users registered on PB database
   const records = await pb.collection("users").getFullList({
     sort: "-created",
     filter: `username="${username}"`,
@@ -102,15 +101,19 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
-      <p>Greetings, please</p>
-      <button
-        type="button"
-        className="w-full mt-6 bg-blue-600 text-white p-2 rounded-lg font-semibold text-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        onClick={handleLoginCallback}
-      >
-        Sign in with Facebook
-      </button>
+    <div className="flex min-h-screen items-center justify-center bg-gray-100 p-8">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm text-center">
+        <p className="text-gray-800 text-2xl font-semibold mb-4">
+          Greetings, please
+        </p>
+        <button
+          type="button"
+          className="w-full py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-xl font-semibold text-sm transition-colors duration-300 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+          onClick={handleLoginCallback}
+        >
+          Sign in with Facebook
+        </button>
+      </div>
     </div>
   );
 };
